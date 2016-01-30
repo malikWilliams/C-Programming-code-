@@ -1,0 +1,197 @@
+// Created by Malik Williams
+// This program has many features but its main function is to convert and find the area of shapes 
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int main ()
+{ 
+
+char menu;
+float input1, start,input2, con, form, test = 0;
+
+do
+{
+	system("cls");
+printf("______________________________\n");
+printf("______________________________\n");
+	printf(" choose your conversion.\n");
+	printf("a) inches ====> centimeters\n");
+	printf("b) centimeters ====> inches\n");
+	printf("c) celsius ====> fahrenheit\n");
+	printf("d) fahrenheit ====> celsius\n");
+	printf("e) miles ====> feet\n");
+	printf("f) inches ====> feet\n");
+	printf("______________________________\n");
+	printf(" choose your formula\n");
+	printf("g) area of a triangle\n");
+	printf("h) area of a square\n");
+	printf("i) area of a rectangle\n");
+	
+	printf("Choice:\n ");
+	scanf("%c", &menu);
+	
+	if(menu == '\n'){
+		scanf("%c", &menu);
+	}
+	
+	if (menu == 'a'|| menu == 'A')
+	{
+		printf("Enter the amount of inches you want converted.\n");
+		scanf("%f", &input1);
+		con= input1*2.54;
+		printf("%.0f inches equals to %.3f centimeters.\n",input1, con);	
+		
+		printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	}
+	
+	else if( menu == 'b' || menu == 'B')
+	{
+		printf("Enter the amount of centimeter you want converted.\n");
+		scanf("%f", &input1);
+		con = input1 *0.393701;
+		printf("%.0f centimeters equals to %f inches.\n",input1, con);
+		
+		printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	}
+	 else if (menu == 'c'|| menu == 'C')
+	 {
+	 	printf("Enter the amount of celsius you want converted.\n");
+		scanf("%f", &input1);
+		con = 9/5 *input1 + 32;
+		printf("%.0f celsius equals to %f fahrenheit.\n",input1, con);
+		
+		printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	 	
+	 }
+	 
+	 else if ( menu == 'd'|| menu == 'D')
+	 { 
+	 	printf("Enter the amount of fahrenheit you want converted.\n");
+		scanf("%f", &input1);
+		con = (input1 - 32)*5/9;
+		printf("%.0f fahrenheit equals to %.2f celsius.\n",input1, con);
+		
+		printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	 }
+	 else if (menu == 'e'|| menu == 'E')
+	{
+			printf("Enter the amount of miles you want converted.\n");
+		scanf("%f", &input1);
+		con = input1*5280;
+		printf("%.0f miles equals to %.3f feet.\n",input1, con);
+		
+		printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	 	
+	}
+	else if (menu == 'f'|| menu == 'F')
+	{
+			printf("Enter the amount of inches you want converted.\n");
+		scanf("%f", &input1);
+		con = input1/12;
+		printf("%.0f inches equals to %f feet.\n",input1, con);
+		
+		printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	 	
+	}
+	else if (menu == 'g'|| menu == 'G')
+	{
+	  	printf("enter inches for height\n");
+	  		scanf("%f", &input1);
+	  	printf("enter inches for base\n");
+	  		scanf("%f", &input2);
+	  	form = input1* input2 * 1/2;
+		printf("Area of triangle equals %f\n", form); 
+	  	
+	  	printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+	}
+	
+	
+	else if (menu == 'h'|| menu == 'H')
+	{
+	  	printf("enter inches of side\n");
+	  		scanf("%f", &input1);
+	  	
+	  	form = input1* input1;
+		printf("Area of square equals %.2f\n", form); 
+	  	
+	  	printf(" Press zero to start over\n if not system will terminate\n");
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+		}
+		 
+	  	
+	}
+	else if (menu == 'i'|| menu == 'I')
+	{
+	  	printf("enter inches for length \n");
+	  		scanf("%f", &input1);
+	  	printf("enter inches for width\n");
+	  		scanf("%f", &input2);
+	  	form = input1*input2 ;
+		printf("Area of rectangle equals %.2f\n", form); 
+		
+		printf(" Press zero to start over\n if not system will terminate\n ");
+
+		scanf("%f", &start);
+		if(start == 0)
+		{
+			test=1;
+			
+		}
+		 
+	  	 
+	  	
+	}
+	
+	
+	else 
+	{
+		printf("Error invalid choice system will now start over\n");
+		printf("%c\n", (char)234);
+		test=1;
+	}
+	
+}while (test == 1);
+	
+	
+	return 0;
+}
