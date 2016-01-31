@@ -1,0 +1,40 @@
+// Created by Malik Williams
+// This programs main purpose is to display what case is the letter, using the integers the letter is assigned on the ascii table.
+
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+
+char character;
+int asciiCode;
+int i;
+
+printf("Please type a letter.");
+do {
+	
+	scanf("%c", &character);
+	if(character == '\n')
+	{
+		scanf("%c", &character );
+	}
+asciiCode = (int) character;
+
+printf("%i\n", asciiCode);
+ 
+if ( asciiCode >= 65 && asciiCode <= 90 )
+{
+	printf("Uppercase letter\n");
+	i = 0;
+}
+if (asciiCode >= 97 && asciiCode <= 122)
+{
+	printf("Lowerscase letter\n" );
+	 
+	 i = 0;
+	
+}
+}while (i == 0);
+
+return 0;
+}
