@@ -1,0 +1,85 @@
+// Creator: Malik Williams
+// This program main purpose is to simulate a login process.
+#include <stdio.h> // standard input output
+#include <stdlib.h>// standard libary 
+
+
+
+int main() // Starts main command block 
+
+{
+int username = 123456, password = 1234 , ucheck = 0 , pcheck = 0, attempts = 0 , newpassword = 0, runs =0 ; // Creates variables 
+
+
+  
+   
+   while (  runs != 1 && attempts <3 ) // Sets condition for the loop
+   
+   {
+   	printf("Username:\n");// commands the computer to print the statment
+   	scanf("%d", &ucheck );// checks for user input
+   	printf ("Password:\n");// commands the computer to print the statment
+   	scanf ("%d",& pcheck);// checks for user input
+   	
+   	
+		if (username == ucheck && password == pcheck )
+		
+		{
+		 printf(" Success!!");// commands the computer to print the statment
+	  	 printf (" Now create a new four digit password\n  ");// commands the computer to print the statment
+	  	 runs = 1;
+		}
+		else if (username != ucheck || password != pcheck )
+		{
+			 attempts ++;
+			printf(" Invalid credentials program will terminate after 3 tries \n you have failed %d times \n", attempts);// commands the computer to print the statment
+		}
+   }
+   if( attempts == 3 )
+   {
+   	printf(" Program will now terminate");// commands the computer to print the statment
+   	return 0;
+   }
+   
+   else 
+   { 
+   runs = 0;
+   attempts =0;
+   }
+   while (runs != 1 && newpassword >=9999 || newpassword < 999  || newpassword == password )
+   {
+   			
+		   	printf("Newpassword\n");// commands the computer to print the statment
+	  	 	scanf ("%d", &newpassword);// checks for user input
+	  	 	
+	  	 	if (newpassword <= 9999 && newpassword > 999 && newpassword != password)
+	  	 	{
+	  	 		printf(" you have now created a new password\n your password is now %d\n", newpassword);// commands the computer to print the statment
+	  	 		runs = 1; // stops the loops from occuring 
+			   }
+			else 
+			{
+			printf("this password exceeds 4 digits,\n is lower than 4 digits,\n  or is the same as previous password,\n please try agian\n"); // commands the computer to print the statment	
+			}		
+   }
+   runs = 0;
+   while ( runs != 1)
+   {
+   			printf ("Now you must re login with your new password\n  ");// commands the computer to print the statment
+	  	 	printf ("Username:\n");// commands the computer to print the statment
+	  	 	scanf ("%d",&ucheck);// checks for user input
+	  	 	printf ("Password:\n");// commands the computer to print the statment
+	  	 	scanf ("%d", & pcheck);// checks for user input
+   	if (username == ucheck && pcheck == newpassword)
+   	{
+   		printf(" Your have successfully logged in with your new password");// commands the computer to print the statment
+   		runs = 1;// stops the loops from occuring 
+	   }
+	else
+	{
+	printf("Login Unsucessful\n");// commands the computer to print the statment
+	
+	}
+   }
+   	return 0;
+   }
